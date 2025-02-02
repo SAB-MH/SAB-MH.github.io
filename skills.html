@@ -1,0 +1,82 @@
+<!-- competences.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Compétences</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">[PORTFOLIO]</div>
+        <div class="nav-links">
+            <a href="index.html">[Accueil]</a>
+            <a href="skills.html">[Compétences]</a>
+            <a href="contact.html">[Contact]</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="competence">
+            <h2>C1 : Réaliser un développement d'application</h2>
+            <p>TD Java (programmation objet, structures de données), TP Web (HTML, CSS, JS), SAE 1.2</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%"></div>
+            </div>
+        </div>
+
+        <div class="competence">
+            <h2>C2 : Optimiser des applications</h2>
+            <p>TD sur l'optimisation du code, refactoring en Java, indexation SQL</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+            </div>
+        </div>
+        <div class="competence">
+            <h2>C3 : Optimiser des applications</h2>
+            <p>TD sur l'optimisation du code, refactoring en Java, indexation SQL</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+            </div>
+        </div><div class="competence">
+            <h2>C4 : Optimiser des applications</h2>
+            <p>TD sur l'optimisation du code, refactoring en Java, indexation SQL</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+            </div>
+        </div><div class="competence">
+            <h2>C5 : Optimiser des applications</h2>
+            <p>TD sur l'optimisation du code, refactoring en Java, indexation SQL</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+            </div>
+        </div>
+        <div class="competence">
+            <h2>C6 : Optimiser des applications</h2>
+            <p>TD sur l'optimisation du code, refactoring en Java, indexation SQL</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+            </div>
+        </div>
+
+
+
+        <!-- Répéter pour C3-C6 -->
+    </div>
+
+    <script>
+        function showProgress() {
+            const bars = document.querySelectorAll('.progress');
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+        window.addEventListener('load', showProgress);
+    </script>
+</body>
+</html>
