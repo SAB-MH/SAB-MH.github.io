@@ -1,0 +1,242 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        nav {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #252525;
+        }
+
+        .logo {
+            color: #3498db;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Skills Page */
+        .skills {
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: #252525;
+            padding: 1.5rem;
+            border-radius: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .skill-card.visible {
+            animation: fadeIn 1s forwards;
+        }
+
+        /* Contact Page */
+        .contact {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 0.8rem;
+            background-color: #252525;
+            border: none;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .contact button {
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .contact button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Portfolio</div>
+        <div class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="skills.html">Compétences</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bonjour 👋<br>Je suis <span class="gradient-text">Votre Nom</span></h1>
+            <p>Développeur Front-End passionné</p>
+            <a href="contact.html" class="cta-button">Me contacter</a>
+        </div>
+    </section>
+
+    <script>
+        // Animation pour les skill cards
+        function checkScroll() {
+            const cards = document.querySelectorAll('.skill-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < window.innerHeight - 100) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkScroll);
+    </script>
+</body>
+</html>
+
+<!-- skills.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Même head que index.html -->
+</head>
+<body>
+    <nav>
+        <!-- Même nav que index.html -->
+    </nav>
+
+    <section class="skills">
+        <div class="skill-card">
+            <h3>HTML/CSS</h3>
+            <p>Création de sites web responsive et modernes</p>
+        </div>
+        <div class="skill-card">
+            <h3>JavaScript</h3>
+            <p>Développement d'applications web interactives</p>
+        </div>
+        <div class="skill-card">
+            <h3>React</h3>
+            <p>Construction d'interfaces utilisateur dynamiques</p>
+        </div>
+    </section>
+
+    <script>
+        // Même script que index.html
+    </script>
+</body>
+</html>
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Même head que index.html -->
+</head>
+<body>
+    <nav>
+        <!-- Même nav que index.html -->
+    </nav>
+
+    <section class="contact">
+        <h2>Me Contacter</h2>
+        <form>
+            <input type="text" placeholder="Nom" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
+</body>
+</html>
