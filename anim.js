@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
     competences.forEach(competence => {
       competence.addEventListener('click', function() {
         const title = this.querySelector('h2').textContent;
-        const description = `Description détaillée de la compétence : ${title}`;
+        const description = competence.querySelector('.hidden-description').textContent;
         
         modalTitle.textContent = title;
         modalDescription.textContent = description;
